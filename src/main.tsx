@@ -5,7 +5,7 @@ import "./index.css";
 import { MouseFollower } from "@/components/ui/mouse-follower";
 
 createRoot(document.getElementById("root")!).render(
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
         <MouseFollower />
         <App />
     </ThemeProvider>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import heroBanner from "@/assets/hero-flag-pellets.jpg";
+const heroBanner = "/Pellets_Website.avif";
 import { motion, AnimatePresence } from "framer-motion";
 import { Spotlight } from "@/components/ui/spotlight"; // NEW import
 
@@ -45,7 +45,7 @@ const Hero = () => {
         <motion.img
           src={heroBanner}
           alt="Engineering High-Performance Polymer Solutions"
-          className="w-full h-full object-cover opacity-90"
+          className="w-full h-full object-cover"
           initial={{ scale: 1 }}
           animate={{ scale: 1.1 }}
           transition={{

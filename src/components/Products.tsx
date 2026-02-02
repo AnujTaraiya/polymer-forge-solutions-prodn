@@ -124,14 +124,17 @@ const Products = () => {
               <ScrollReveal key={index} delay={index * 0.05} className="h-full group">
                 <CometCard className="h-full transition-transform duration-300 group-hover:scale-[1.02]">
                   <Card
-                    className="bg-brand-navy/90 text-white border-none shadow-xl h-full backdrop-blur-md border border-white/10"
+                    className="h-full overflow-hidden relative bg-white/5 dark:bg-slate-900/40 backdrop-blur-md border border-zinc-200 dark:border-white/10 group-hover:bg-white/10 dark:group-hover:bg-slate-800/50 transition-colors duration-300"
                   >
+                    <div className="absolute top-0 left-0 w-1 h-full bg-brand-orange opacity-0 group-hover:opacity-100 transition-opacity" />
                     <CardHeader>
-                      <CardTitle className="text-3xl font-gotham text-brand-orange">{product.name}</CardTitle>
-                      <CardDescription className="text-white/80 text-lg font-medium">
+                      <CardTitle className="text-2xl font-bold text-brand-navy dark:text-amber-100">{product.name}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <CardDescription className="text-base text-zinc-600 dark:text-zinc-400">
                         {product.description}
                       </CardDescription>
-                    </CardHeader>
+                    </CardContent>
                   </Card>
                 </CometCard>
               </ScrollReveal>

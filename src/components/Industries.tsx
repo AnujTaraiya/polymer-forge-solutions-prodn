@@ -41,7 +41,7 @@ const Industries = () => {
     <section id="industries" className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
         <ScrollReveal className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-sky-300 dark:to-blue-500 dark:drop-shadow-[0_0_10px_rgba(56,189,248,0.3)]">Industries Served</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-brand-orange dark:via-amber-200 dark:to-brand-orange dark:bg-[length:200%_auto] dark:animate-shimmer filter dark:drop-shadow-[0_0_10px_rgba(245,166,0,0.5)]">Industries Served</h2>
           <div className="text-xl text-muted-foreground flex justify-center">
             <TextGenerateEffect
               words="We deliver tailored polymer solutions across high-performance sectors, ensuring reliability and innovation where it matters most."

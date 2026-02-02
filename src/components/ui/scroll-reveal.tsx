@@ -16,16 +16,16 @@ export const ScrollReveal = ({
     className,
     delay = 0,
     direction = "up",
-    duration = 0.5,
+    duration = 0.4,
 }: ScrollRevealProps) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-50px" });
+    const isInView = useInView(ref, { once: true, margin: "-10%" });
 
     const variants = {
         hidden: {
             opacity: 0,
-            y: direction === "up" ? 40 : direction === "down" ? -40 : 0,
-            x: direction === "left" ? 40 : direction === "right" ? -40 : 0,
+            y: direction === "up" ? 20 : direction === "down" ? -20 : 0,
+            x: direction === "left" ? 20 : direction === "right" ? -20 : 0,
         },
         visible: {
             opacity: 1,
@@ -34,7 +34,7 @@ export const ScrollReveal = ({
             transition: {
                 duration: duration,
                 delay: delay,
-                ease: "easeOut",
+                ease: "ease-out",
             },
         },
     };
@@ -45,7 +45,7 @@ export const ScrollReveal = ({
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             variants={variants}
-            className={cn(className)}
+            className={cn("will-change-[transform,opacity]", className)}
         >
             {children}
         </motion.div>
@@ -55,7 +55,7 @@ export const ScrollReveal = ({
 export const StaggerContainer = ({
     children,
     className,
-    staggerDelay = 0.1,
+    staggerDelay = 0.05,
 }: {
     children: React.ReactNode;
     className?: string;
