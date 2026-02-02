@@ -80,7 +80,7 @@ const Navigation = () => {
             exit={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-sm pt-4"
+            className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md pt-4 transition-colors duration-300 ${isHome ? "bg-sky-500/15 dark:bg-transparent" : "bg-brand-navy/50 dark:bg-slate-950/90 shadow-sm"}`}
           >
             <div className="container mx-auto px-4">
               <div className="flex items-center justify-between h-20">

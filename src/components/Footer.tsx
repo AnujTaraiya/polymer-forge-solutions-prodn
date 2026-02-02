@@ -1,5 +1,6 @@
 import nexapolLogo from "@/assets/nexapol-logo.png";
 import polnyeoLogo from "@/assets/polyneo-logo-white.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -23,10 +24,10 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-3 text-sm text-secondary-foreground">Quick Links</h4>
             <ul className="space-y-1.5 text-sm">
-              <li><a href="/#home" className="text-secondary-foreground/80 hover:text-primary transition-colors">Home</a></li>
-              <li><a href="/#about" className="text-secondary-foreground/80 hover:text-primary transition-colors">About</a></li>
-              <li><a href="/#products" className="text-secondary-foreground/80 hover:text-primary transition-colors">Products</a></li>
-              <li><a href="/#contact" className="text-secondary-foreground/80 hover:text-primary transition-colors">Contact</a></li>
+              <li><Link to="/#home" className="text-secondary-foreground/80 hover:text-primary transition-colors">Home</Link></li>
+              <li><Link to="/#home" className="text-secondary-foreground/80 hover:text-primary transition-colors">About</Link></li>
+              <li><Link to="/#products" className="text-secondary-foreground/80 hover:text-primary transition-colors">Products</Link></li>
+              <li><Link to="/#contact" className="text-secondary-foreground/80 hover:text-primary transition-colors">Contact</Link></li>
             </ul>
           </div>
 

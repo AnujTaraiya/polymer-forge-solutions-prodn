@@ -85,30 +85,32 @@ const Products = () => {
           </ScrollReveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {productCategories.map((product, index) => (
-              <ScrollReveal key={index} delay={index * 0.1} className="h-full group">
-                <CometCard className="h-full transition-transform duration-300 group-hover:scale-[1.02]">
-                  <Card
-                    className="h-full overflow-hidden relative bg-white/5 dark:bg-slate-900/40 backdrop-blur-md border border-zinc-200 dark:border-white/10 group-hover:bg-white/10 dark:group-hover:bg-slate-800/50 transition-colors duration-300"
-                  >
-                    <div className="absolute top-0 left-0 w-1 h-full bg-brand-orange opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <CardHeader>
-                      <div className="transform transition-transform duration-300">
-                        {product.icon}
-                      </div>
-                      <CardTitle className="text-xl text-brand-navy dark:text-amber-100">{product.name}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <CardDescription className="mb-6 text-base text-zinc-600 dark:text-zinc-400">
-                        {product.description}
-                      </CardDescription>
-                      <Link to={product.path}>
-                        <Button variant="outline" className="w-full hover:bg-brand-navy hover:text-white transition-colors">
-                          Learn more <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
-                      </Link>
-                    </CardContent>
-                  </Card>
-                </CometCard>
+              <ScrollReveal key={index} delay={index * 0.1} className="h-full">
+                <Link to={product.path} className="block h-full group">
+                  <CometCard className="h-full transition-transform duration-300 group-hover:scale-[1.02]">
+                    <Card
+                      className="h-full overflow-hidden relative bg-white/5 dark:bg-slate-900/40 backdrop-blur-md border border-zinc-200 dark:border-white/10 group-hover:bg-white/10 dark:group-hover:bg-slate-800/50 transition-colors duration-300"
+                    >
+                      <div className="absolute top-0 left-0 w-1 h-full bg-brand-orange opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <CardHeader>
+                        <div className="transform transition-transform duration-300">
+                          {product.icon}
+                        </div>
+                        <CardTitle className="text-xl text-brand-navy dark:text-amber-100">{product.name}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription className="mb-6 text-base text-zinc-600 dark:text-zinc-400">
+                          {product.description}
+                        </CardDescription>
+                        <div className="w-full">
+                          <Button variant="outline" className="w-full hover:bg-brand-navy hover:text-white transition-colors">
+                            Learn more <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </CometCard>
+                </Link>
               </ScrollReveal>
             ))}
           </div>
