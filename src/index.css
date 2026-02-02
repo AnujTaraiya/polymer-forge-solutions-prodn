@@ -146,19 +146,15 @@ All colors MUST be HSL.
     background: #474c50;
   }
 
-  /* Custom Cursor Hiding */
+  /* Custom Cursor Hiding - Aggressive Override */
   @media (min-width: 1024px) {
-    body {
-      cursor: none;
-    }
 
-    a,
-    button,
-    [role="button"],
-    input,
-    textarea,
-    select {
-      cursor: none;
+    html,
+    body,
+    *,
+    *::before,
+    *::after {
+      cursor: none !important;
     }
   }
 
