@@ -1,6 +1,7 @@
 import { Car, Zap, Building2, Truck, Heart, Cpu } from "lucide-react";
 import { CometCard } from "@/components/ui/comet-card";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 const Industries = () => {
   const industries = [
@@ -39,14 +40,14 @@ const Industries = () => {
   return (
     <section id="industries" className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
-        <ScrollReveal className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Industries We Serve
-          </h2>
-          <p className="text-xl text-muted-foreground">
-            Delivering specialized polymer solutions across diverse sectors with tailored compounds
-            that meet industry-specific requirements.
-          </p>
+        <ScrollReveal className="text-center mb-16 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold mb-6 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-sky-300 dark:to-blue-500 dark:drop-shadow-[0_0_10px_rgba(56,189,248,0.3)]">Industries Served</h2>
+          <div className="text-xl text-muted-foreground flex justify-center">
+            <TextGenerateEffect
+              words="We deliver tailored polymer solutions across high-performance sectors, ensuring reliability and innovation where it matters most."
+              className="text-center font-normal text-muted-foreground"
+            />
+          </div>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">

@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 const Contact = () => {
   const contactInfo = [

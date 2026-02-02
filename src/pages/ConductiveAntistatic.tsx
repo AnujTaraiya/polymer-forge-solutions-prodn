@@ -16,7 +16,7 @@ const ConductiveAntistatic = () => {
                 <div className="container mx-auto px-6">
                     {/* Header */}
                     <div className="max-w-4xl mx-auto mb-16 text-center">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-brand-navy">Conductive & Anti-Static Thermoplastic Compounds</h1>
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-brand-orange dark:via-amber-200 dark:to-brand-orange dark:bg-[length:200%_auto] dark:animate-shimmer filter dark:drop-shadow-[0_0_8px_rgba(245,166,0,0.5)]">Conductive & Anti-Static Thermoplastic Compounds</h1>
                         <p className="text-xl text-muted-foreground">Engineered ESD protection and electrical conductivity solutions</p>
                     </div>
 
@@ -44,7 +44,7 @@ const ConductiveAntistatic = () => {
                                 <CometCard className="w-full h-full">
                                     <div className="bg-card p-6 rounded-lg shadow-sm border border-border h-full flex flex-col">
                                         <img src={conductiveEv} alt="EV & Battery Systems" className="w-full h-48 object-cover rounded-md mb-4" />
-                                        <h3 className="text-xl font-bold mb-3 text-brand-navy">EV & Battery Systems</h3>
+                                        <h3 className="text-xl font-bold mb-3 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-brand-orange dark:to-amber-500">EV & Battery Systems</h3>
                                         <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground flex-grow">
                                             <li>Battery pack components</li>
                                             <li>EV charging infrastructure</li>
@@ -57,7 +57,7 @@ const ConductiveAntistatic = () => {
                                 <CometCard className="w-full h-full">
                                     <div className="bg-card p-6 rounded-lg shadow-sm border border-border h-full flex flex-col">
                                         <img src={conductiveElectronics} alt="Electrical & Electronic Equipment" className="w-full h-48 object-cover rounded-md mb-4" />
-                                        <h3 className="text-xl font-bold mb-3 text-brand-navy">Electrical & Electronic Equipment</h3>
+                                        <h3 className="text-xl font-bold mb-3 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-brand-orange dark:to-amber-500">Electrical & Electronic Equipment</h3>
                                         <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground flex-grow">
                                             <li>Equipment housings and enclosures</li>
                                             <li>Connector systems</li>
@@ -70,7 +70,7 @@ const ConductiveAntistatic = () => {
                                 <CometCard className="w-full h-full">
                                     <div className="bg-card p-6 rounded-lg shadow-sm border border-border h-full flex flex-col">
                                         <img src={conductiveIndustrial} alt="Industrial Applications" className="w-full h-48 object-cover rounded-md mb-4" />
-                                        <h3 className="text-xl font-bold mb-3 text-brand-navy">Industrial Applications</h3>
+                                        <h3 className="text-xl font-bold mb-3 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-brand-orange dark:to-amber-500">Industrial Applications</h3>
                                         <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground flex-grow">
                                             <li>Material handling equipment</li>
                                             <li>Safety-critical components</li>

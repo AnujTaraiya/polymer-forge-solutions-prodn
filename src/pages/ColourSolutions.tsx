@@ -16,7 +16,7 @@ const ColourSolutions = () => {
                 <div className="container mx-auto px-6">
                     {/* Header */}
                     <div className="max-w-4xl mx-auto mb-16 text-center">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-brand-navy">Colour Solutions for Thermoplastic Compounds</h1>
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-brand-orange dark:via-amber-200 dark:to-brand-orange dark:bg-[length:200%_auto] dark:animate-shimmer filter dark:drop-shadow-[0_0_8px_rgba(245,166,0,0.5)]">Colour Solutions for Thermoplastic Compounds</h1>
                         <p className="text-xl text-muted-foreground">Precision colour engineering where appearance meets performance</p>
                     </div>
 
@@ -49,7 +49,7 @@ const ColourSolutions = () => {
                                 <CometCard className="w-full h-full">
                                     <div className="bg-card p-6 rounded-lg shadow-sm border border-border h-full flex flex-col">
                                         <img src={colourAutomotive} alt="Automotive" className="w-full h-48 object-cover rounded-md mb-4" />
-                                        <h3 className="text-xl font-bold mb-3 text-brand-navy">Automotive</h3>
+                                        <h3 className="text-xl font-bold mb-3 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-brand-orange dark:to-amber-500">Automotive</h3>
                                         <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground flex-grow">
                                             <li>Interior components (dashboards, trim, panels)</li>
                                             <li>Exterior parts (bumpers, grilles, body panels)</li>
@@ -61,7 +61,7 @@ const ColourSolutions = () => {
                                 <CometCard className="w-full h-full">
                                     <div className="bg-card p-6 rounded-lg shadow-sm border border-border h-full flex flex-col">
                                         <img src={colourElectronics} alt="Electrical & Electronics" className="w-full h-48 object-cover rounded-md mb-4" />
-                                        <h3 className="text-xl font-bold mb-3 text-brand-navy">Electrical & Electronics</h3>
+                                        <h3 className="text-xl font-bold mb-3 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-brand-orange dark:to-amber-500">Electrical & Electronics</h3>
                                         <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground flex-grow">
                                             <li>Housings and enclosures</li>
                                             <li>Consumer-facing components</li>
@@ -73,7 +73,7 @@ const ColourSolutions = () => {
                                 <CometCard className="w-full h-full">
                                     <div className="bg-card p-6 rounded-lg shadow-sm border border-border h-full flex flex-col">
                                         <img src={colourIndustrial} alt="Industrial" className="w-full h-48 object-cover rounded-md mb-4" />
-                                        <h3 className="text-xl font-bold mb-3 text-brand-navy">Industrial</h3>
+                                        <h3 className="text-xl font-bold mb-3 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-brand-orange dark:to-amber-500">Industrial</h3>
                                         <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground flex-grow">
                                             <li>Functional components</li>
                                             <li>Machine parts</li>

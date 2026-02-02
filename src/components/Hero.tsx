@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import heroBanner from "@/assets/hero-flag-pellets.jpg";
 import { motion, AnimatePresence } from "framer-motion";
+import { Spotlight } from "@/components/ui/spotlight"; // NEW import
 
 const rotatingScenes = [
   {
@@ -33,6 +34,12 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative group/hero h-[600px] md:h-[700px] overflow-hidden bg-brand-navy">
+      {/* Aceternity Spotlight Effect (Dark Mode Enhanced) */}
+      <Spotlight
+        className="-top-40 left-0 md:left-60 md:-top-20"
+        fill="white"
+      />
+
       {/* Background Image with Ken Burns Effect */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.img
@@ -63,7 +70,7 @@ const Hero = () => {
 
       {/* Rotating Text Banner - Positioned absolute bottom - Matches User Scenes */}
       <div className="absolute bottom-0 left-0 right-0 overflow-hidden bg-zinc-950/80 shadow-2xl backdrop-blur-md border-t border-white/10 z-20">
-        <div className="relative h-28 flex flex-col justify-center px-6 container mx-auto">
+        <div className="relative min-h-[7rem] md:h-32 flex flex-col justify-center px-6 container mx-auto py-2 md:py-0">
           {/* Progress Bar */}
           <motion.div
             key={currentTextIndex + "progress"}
@@ -74,7 +81,7 @@ const Hero = () => {
           />
 
           <div className="relative w-full flex items-center justify-between">
-            <div className="relative flex-1 overflow-hidden h-20 flex items-center">
+            <div className="relative flex-1 overflow-hidden h-24 flex items-center">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentTextIndex}
@@ -84,10 +91,10 @@ const Hero = () => {
                   transition={{ duration: 0.6, ease: "circOut" }}
                   className="absolute inset-0 flex flex-col justify-center items-start"
                 >
-                  <div className="text-xl md:text-3xl font-gotham font-bold text-brand-orange tracking-wide">
+                  <div className="text-xl md:text-3xl font-gotham font-bold text-brand-orange tracking-wide leading-tight">
                     {rotatingScenes[currentTextIndex].primary}
                   </div>
-                  <div className="text-sm md:text-lg text-white/90 font-medium mt-1">
+                  <div className="text-sm md:text-lg text-white/90 font-medium mt-1 leading-tight">
                     {rotatingScenes[currentTextIndex].secondary}
                   </div>
                 </motion.div>
@@ -95,7 +102,7 @@ const Hero = () => {
             </div>
 
             {/* Navigation Dots */}
-            <div className="flex gap-3 ml-6 self-center">
+            <div className="flex gap-3 ml-4 md:ml-6 self-center shrink-0">
               {rotatingScenes.map((_, index) => (
                 <button
                   key={index}

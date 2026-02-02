@@ -17,7 +17,7 @@ const FlameRetardant = () => {
                 <div className="container mx-auto px-6">
                     {/* Header */}
                     <ScrollReveal className="max-w-4xl mx-auto mb-16 text-center">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-brand-navy">Flame Retardant / Fire-Resistant Thermoplastic Compounds</h1>
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-brand-orange dark:via-amber-200 dark:to-brand-orange dark:bg-[length:200%_auto] dark:animate-shimmer filter dark:drop-shadow-[0_0_8px_rgba(245,166,0,0.5)]">Flame Retardant / Fire-Resistant Thermoplastic Compounds</h1>
                         <p className="text-xl text-muted-foreground">Safety-critical materials engineered for compliance and performance</p>
                     </ScrollReveal>
 
@@ -48,7 +48,7 @@ const FlameRetardant = () => {
                                     <CometCard className="w-full h-full">
                                         <div className="bg-card p-6 rounded-lg shadow-sm border border-border h-full flex flex-col">
                                             <img src={frElectrical} alt="Electrical & Electronic Enclosures" className="w-full h-48 object-cover rounded-md mb-4" />
-                                            <h3 className="text-xl font-bold mb-3 text-brand-navy">Electrical & Electronic Enclosures</h3>
+                                            <h3 className="text-xl font-bold mb-3 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-brand-orange dark:to-amber-500">Electrical & Electronic Enclosures</h3>
                                             <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground flex-grow">
                                                 <li>Switch gear and control panels</li>
                                                 <li>Circuit breaker housings</li>
@@ -64,7 +64,7 @@ const FlameRetardant = () => {
                                     <CometCard className="w-full h-full">
                                         <div className="bg-card p-6 rounded-lg shadow-sm border border-border h-full flex flex-col">
                                             <img src={frBattery} alt="Battery Systems & EV Infrastructure" className="w-full h-48 object-cover rounded-md mb-4" />
-                                            <h3 className="text-xl font-bold mb-3 text-brand-navy">Battery Systems & EV Infrastructure</h3>
+                                            <h3 className="text-xl font-bold mb-3 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-brand-orange dark:to-amber-500">Battery Systems & EV Infrastructure</h3>
                                             <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground flex-grow">
                                                 <li>EV battery enclosures and trays</li>
                                                 <li>Battery management system (BMS) housings</li>
@@ -80,7 +80,7 @@ const FlameRetardant = () => {
                                     <CometCard className="w-full h-full">
                                         <div className="bg-card p-6 rounded-lg shadow-sm border border-border h-full flex flex-col">
                                             <img src={frIndustrial} alt="Industrial & Building Applications" className="w-full h-48 object-cover rounded-md mb-4" />
-                                            <h3 className="text-xl font-bold mb-3 text-brand-navy">Industrial & Building Applications</h3>
+                                            <h3 className="text-xl font-bold mb-3 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-brand-orange dark:to-amber-500">Industrial & Building Applications</h3>
                                             <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground flex-grow">
                                                 <li>Electrical installation components</li>
                                                 <li>Building wire and cable</li>
@@ -137,7 +137,7 @@ const FlameRetardant = () => {
                             <div className="grid md:grid-cols-3 gap-6">
                                 <ScrollReveal delay={0.1}>
                                     <div>
-                                        <h3 className="font-semibold mb-2 text-brand-navy">Electrical & Electronics:</h3>
+                                        <h3 className="font-semibold mb-2 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-brand-orange dark:to-amber-500">Electrical & Electronics:</h3>
                                         <ul className="list-disc pl-5 text-sm text-muted-foreground">
                                             <li>UL 94 (V-0, V-1, V-2, 5VA, 5VB)</li>
                                             <li>IEC 60695</li>
@@ -147,7 +147,7 @@ const FlameRetardant = () => {
                                 </ScrollReveal>
                                 <ScrollReveal delay={0.2}>
                                     <div>
-                                        <h3 className="font-semibold mb-2 text-brand-navy">Automotive:</h3>
+                                        <h3 className="font-semibold mb-2 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-brand-orange dark:to-amber-500">Automotive:</h3>
                                         <ul className="list-disc pl-5 text-sm text-muted-foreground">
                                             <li>FMVSS 302 (Federal Motor Vehicle Safety Standard)</li>
                                             <li>ISO 3795</li>
@@ -157,7 +157,7 @@ const FlameRetardant = () => {
                                 </ScrollReveal>
                                 <ScrollReveal delay={0.3}>
                                     <div>
-                                        <h3 className="font-semibold mb-2 text-brand-navy">Industry-Specific:</h3>
+                                        <h3 className="font-semibold mb-2 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-brand-orange dark:to-amber-500">Industry-Specific:</h3>
                                         <ul className="list-disc pl-5 text-sm text-muted-foreground">
                                             <li>EN 45545 (Railway applications)</li>
                                             <li>UL746 series (Long-term performance)</li>

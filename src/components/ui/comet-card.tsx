@@ -8,6 +8,7 @@ import {
     useMotionTemplate,
 } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { triggerHaptic } from "@/lib/haptics";
 
 export const CometCard = ({
     rotateDepth = 10,
@@ -86,6 +87,7 @@ export const CometCard = ({
                 ref={ref}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
+                onTapStart={triggerHaptic}
                 style={{
                     rotateX,
                     rotateY,
@@ -100,6 +102,7 @@ export const CometCard = ({
                     z: 50,
                     transition: { duration: 0.2 },
                 }}
+                whileTap={{ scale: 0.98 }}
                 className="relative rounded-2xl h-full border border-transparent bg-white/5 dark:bg-black/5"
             >
                 {/* Spotlight Layer */}

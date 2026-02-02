@@ -16,7 +16,7 @@ const LgfCompounds = () => {
                 <div className="container mx-auto px-6">
                     {/* Header */}
                     <div className="max-w-4xl mx-auto mb-16 text-center">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-brand-navy">Long Glass Fiber (LGF) Thermoplastic Compounds</h1>
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-brand-orange dark:via-amber-200 dark:to-brand-orange dark:bg-[length:200%_auto] dark:animate-shimmer filter dark:drop-shadow-[0_0_8px_rgba(245,166,0,0.5)]">Long Glass Fiber (LGF) Thermoplastic Compounds</h1>
                         <p className="text-xl text-muted-foreground">High-strength materials for structural applications and metal replacement</p>
                     </div>
 
@@ -44,7 +44,7 @@ const LgfCompounds = () => {
                                 <CometCard className="w-full h-full">
                                     <div className="bg-card p-6 rounded-lg shadow-sm border border-border h-full flex flex-col">
                                         <img src={lgfAutomotive} alt="Automotive Structural" className="w-full h-48 object-cover rounded-md mb-4" />
-                                        <h3 className="text-xl font-bold mb-3 text-brand-navy">Automotive Structural</h3>
+                                        <h3 className="text-xl font-bold mb-3 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-brand-orange dark:to-amber-500">Automotive Structural</h3>
                                         <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground flex-grow">
                                             <li>Front-end modules and carriers</li>
                                             <li>Seat structures and frames</li>
@@ -58,7 +58,7 @@ const LgfCompounds = () => {
                                 <CometCard className="w-full h-full">
                                     <div className="bg-card p-6 rounded-lg shadow-sm border border-border h-full flex flex-col">
                                         <img src={lgfBattery} alt="Battery & EV" className="w-full h-48 object-cover rounded-md mb-4" />
-                                        <h3 className="text-xl font-bold mb-3 text-brand-navy">Battery & EV</h3>
+                                        <h3 className="text-xl font-bold mb-3 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-brand-orange dark:to-amber-500">Battery & EV</h3>
                                         <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground flex-grow">
                                             <li>Battery trays and enclosures</li>
                                             <li>Structural battery pack frames</li>
@@ -72,7 +72,7 @@ const LgfCompounds = () => {
                                 <CometCard className="w-full h-full">
                                     <div className="bg-card p-6 rounded-lg shadow-sm border border-border h-full flex flex-col">
                                         <img src={lgfIndustrial} alt="Industrial & Mobility" className="w-full h-48 object-cover rounded-md mb-4" />
-                                        <h3 className="text-xl font-bold mb-3 text-brand-navy">Industrial & Mobility</h3>
+                                        <h3 className="text-xl font-bold mb-3 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-brand-orange dark:to-amber-500">Industrial & Mobility</h3>
                                         <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground flex-grow">
                                             <li>Material handling equipment</li>
                                             <li>Agricultural machinery components</li>
