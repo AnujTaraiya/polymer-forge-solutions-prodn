@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-const heroBanner = "/Pellets_Website.avif";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { Spotlight } from "@/components/ui/spotlight"; // NEW import
 
@@ -40,19 +40,22 @@ const Hero = () => {
         fill="white"
       />
 
-      {/* Background Image with Ken Burns Effect */}
+      {/* Background Video with Asymmetric Motion */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.img
-          src={heroBanner}
-          alt="Engineering High-Performance Polymer Solutions"
+        <motion.video
+          src="/GIF.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
           className="w-full h-full object-cover"
-          initial={{ scale: 1 }}
-          animate={{ scale: 1.1 }}
+          initial={{ scale: 1, x: 0 }}
+          animate={{ scale: 1.1, x: "-2%" }}
           transition={{
             duration: 20,
             repeat: Infinity,
-            repeatType: "reverse",
-            ease: "linear"
+            repeatType: "mirror",
+            ease: "easeInOut"
           }}
         />
         {/* Gradient Overlay for better contrast */}
@@ -60,11 +63,16 @@ const Hero = () => {
       </div>
 
       {/* Content Container - Vertically Centered */}
-      <div className="relative z-10 w-full h-full flex flex-col justify-center mb-12">
+      <div className="relative z-10 w-full h-full flex flex-col justify-center items-center mb-12 text-center">
         <div className="container mx-auto px-6">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-gotham font-bold text-white max-w-2xl leading-tight drop-shadow-lg">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-xl md:text-3xl lg:text-4xl font-gotham font-bold text-white max-w-4xl mx-auto leading-tight drop-shadow-lg"
+          >
             Delivering advanced compounds engineered for strength, precision and reliability
-          </h1>
+          </motion.h1>
         </div>
       </div>
 
