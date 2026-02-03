@@ -15,8 +15,8 @@ export const MouseFollower = () => {
 
     useEffect(() => {
         const moveCursor = (e: MouseEvent) => {
-            cursorX.set(e.clientX - 16);
-            cursorY.set(e.clientY - 16);
+            cursorX.set(e.clientX);
+            cursorY.set(e.clientY);
         };
 
         const handleMouseOver = (e: MouseEvent) => {
@@ -44,6 +44,8 @@ export const MouseFollower = () => {
                 style={{
                     x: cursorX,
                     y: cursorY,
+                    translateX: "-50%",
+                    translateY: "-50%",
                 }}
             />
 

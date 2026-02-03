@@ -9,12 +9,6 @@ import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 const Products = () => {
   const productCategories = [
     {
-      name: "Colour Solutions",
-      path: "/colour-solutions",
-      description: "Precision colour engineering where appearance meets performance.",
-      icon: <Layers className="w-10 h-10 text-brand-orange mb-4" />
-    },
-    {
       name: "Conductive & Anti-static",
       path: "/conductive-and-electrostatic-protection",
       description: "Engineered ESD protection and electrical conductivity solutions.",
@@ -31,6 +25,12 @@ const Products = () => {
       path: "/long-glass-fiber",
       description: "High-strength materials for structural applications and metal replacement.",
       icon: <Star className="w-10 h-10 text-brand-orange mb-4" />
+    },
+    {
+      name: "Colour Solutions",
+      path: "/colour-solutions",
+      description: "Precision colour engineering where appearance meets performance.",
+      icon: <Layers className="w-10 h-10 text-brand-orange mb-4" />
     }
   ];
 

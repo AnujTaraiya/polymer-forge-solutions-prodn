@@ -127,46 +127,7 @@ const FlameRetardant = () => {
                             </div>
                         </section>
 
-                        <Separator />
 
-                        {/* Value Added Services - Compliance */}
-                        <section>
-                            <ScrollReveal>
-                                <h2 className="text-2xl font-bold mb-6 text-brand-orange">Compliance with Global Standards</h2>
-                            </ScrollReveal>
-                            <div className="grid md:grid-cols-3 gap-6">
-                                <ScrollReveal delay={0.1}>
-                                    <div>
-                                        <h3 className="font-semibold mb-2 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-brand-orange dark:to-amber-500">Electrical & Electronics:</h3>
-                                        <ul className="list-disc pl-5 text-sm text-muted-foreground">
-                                            <li>UL 94 (V-0, V-1, V-2, 5VA, 5VB)</li>
-                                            <li>IEC 60695</li>
-                                            <li>Glow Wire Testing (GWFI, GWIT)</li>
-                                        </ul>
-                                    </div>
-                                </ScrollReveal>
-                                <ScrollReveal delay={0.2}>
-                                    <div>
-                                        <h3 className="font-semibold mb-2 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-brand-orange dark:to-amber-500">Automotive:</h3>
-                                        <ul className="list-disc pl-5 text-sm text-muted-foreground">
-                                            <li>FMVSS 302 (Federal Motor Vehicle Safety Standard)</li>
-                                            <li>ISO 3795</li>
-                                            <li>OEM-specific flammability requirements</li>
-                                        </ul>
-                                    </div>
-                                </ScrollReveal>
-                                <ScrollReveal delay={0.3}>
-                                    <div>
-                                        <h3 className="font-semibold mb-2 text-brand-navy dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-br dark:from-brand-orange dark:to-amber-500">Industry-Specific:</h3>
-                                        <ul className="list-disc pl-5 text-sm text-muted-foreground">
-                                            <li>EN 45545 (Railway applications)</li>
-                                            <li>UL746 series (Long-term performance)</li>
-                                            <li>RoHS and REACH compliance</li>
-                                        </ul>
-                                    </div>
-                                </ScrollReveal>
-                            </div>
-                        </section>
 
                         <Separator />
 
