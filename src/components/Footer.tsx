@@ -14,7 +14,7 @@ const Footer = () => {
             <div className="flex items-center gap-2 mb-2">
               <span className="text-sm text-secondary-foreground/80">A</span>
               <img src={nexapolLogo} alt="Nexapol" className="h-5" />
-              <span className="text-sm text-secondary-foreground/80">Company</span>
+              <span className="text-sm text-secondary-foreground/80">affiliated Company</span>
             </div>
             <p className="text-sm text-secondary-foreground/80 mt-2">
               Leading the way in advanced polymer compounding solutions.
