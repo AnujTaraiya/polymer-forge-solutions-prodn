@@ -24,6 +24,7 @@ const rotatingScenes = [
 
 const Hero = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -48,8 +49,13 @@ const Hero = () => {
         fill="white"
       />
 
-      {/* Background Video with Asymmetric Motion */}
-      <div className="absolute inset-0 overflow-hidden bg-brand-navy">
+      {/* Background Video with CSS Gradient Fallback */}
+      <div 
+        className="absolute inset-0 overflow-hidden bg-brand-navy"
+        style={{
+          background: "radial-gradient(circle at 30% 50%, rgba(245, 166, 0, 0.25) 0%, rgba(10, 25, 41, 1) 70%)"
+        }}
+      >
         <motion.video
           ref={videoRef}
           src="/GIF.mp4"
@@ -58,14 +64,18 @@ const Hero = () => {
           muted
           playsInline
           preload="auto"
+          onPlay={() => setVideoLoaded(true)}
           className="w-full h-full object-cover will-change-transform translate-z-0"
-          initial={{ scale: 1, x: 0 }}
-          animate={{ scale: 1.05, x: "-1%" }}
+          initial={{ opacity: 0, scale: 1, x: 0 }}
+          animate={{ 
+            opacity: videoLoaded ? 1 : 0,
+            scale: 1.05, 
+            x: "-1%" 
+          }}
           transition={{
-            duration: 25,
-            repeat: Infinity,
-            repeatType: "mirror",
-            ease: "easeInOut"
+            opacity: { duration: 0.5 },
+            scale: { duration: 25, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" },
+            x: { duration: 25, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }
           }}
         />
         {/* Gradient Overlay for better contrast */}

@@ -158,8 +158,16 @@ All colors MUST be HSL.
     }
   }
 
-  .dark body {
+  /* GPU Optimized Background - Replaces background-attachment: fixed */
+  #bg-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
     background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #020617 100%);
-    background-attachment: fixed;
+    will-change: transform;
+    transform: translateZ(0);
   }
 }

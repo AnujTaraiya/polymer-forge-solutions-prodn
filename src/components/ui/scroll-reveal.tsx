@@ -19,7 +19,7 @@ export const ScrollReveal = ({
     duration = 0.4,
 }: ScrollRevealProps) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-10%" });
+    const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     const variants = {
         hidden: {

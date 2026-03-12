@@ -81,6 +81,8 @@ export const CometCard = ({
         y.set(0);
     };
 
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
     return (
         <div className={cn("perspective-distant transform-3d group/spotlight", className)}>
             <motion.div
@@ -89,45 +91,50 @@ export const CometCard = ({
                 onMouseLeave={handleMouseLeave}
                 onTapStart={triggerHaptic}
                 style={{
-                    rotateX,
-                    rotateY,
-                    translateX,
-                    translateY,
-                    boxShadow:
-                        "rgba(0, 0, 0, 0.01) 0px 520px 146px 0px, rgba(0, 0, 0, 0.04) 0px 333px 133px 0px, rgba(0, 0, 0, 0.26) 0px 83px 83px 0px, rgba(0, 0, 0, 0.29) 0px 21px 46px 0px",
+                    rotateX: isMobile ? 0 : rotateX,
+                    rotateY: isMobile ? 0 : rotateY,
+                    translateX: isMobile ? 0 : translateX,
+                    translateY: isMobile ? 0 : translateY,
+                    boxShadow: isMobile 
+                        ? "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)"
+                        : "rgba(0, 0, 0, 0.01) 0px 520px 146px 0px, rgba(0, 0, 0, 0.04) 0px 333px 133px 0px, rgba(0, 0, 0, 0.26) 0px 83px 83px 0px, rgba(0, 0, 0, 0.29) 0px 21px 46px 0px",
                 }}
                 initial={{ scale: 1, z: 0 }}
-                whileHover={{
+                whileHover={isMobile ? {} : {
                     scale: 1.05,
                     z: 50,
                     transition: { duration: 0.2 },
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="relative rounded-2xl h-full border border-transparent bg-white/5 dark:bg-black/5"
+                className="relative rounded-2xl h-full border border-transparent bg-white/5 dark:bg-black/5 will-change-transform"
             >
-                {/* Spotlight Layer */}
-                <motion.div
-                    className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition duration-300 group-hover/spotlight:opacity-100 z-10"
-                    style={{
-                        backgroundColor: "rgba(255, 255, 255, 0.15)", // Increased visibility
-                        maskImage: spotlightMask,
-                        WebkitMaskImage: spotlightMask,
-                    }}
-                />
+                {/* Spotlight Layer - Only show on desktop */}
+                {!isMobile && (
+                    <motion.div
+                        className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition duration-300 group-hover/spotlight:opacity-100 z-10"
+                        style={{
+                            backgroundColor: "rgba(255, 255, 255, 0.15)",
+                            maskImage: spotlightMask,
+                            WebkitMaskImage: spotlightMask,
+                        }}
+                    />
+                )}
 
                 <div className="relative z-20 h-full">
                     {children}
                 </div>
 
-                {/* Glare Layer */}
-                <motion.div
-                    className="pointer-events-none absolute inset-0 z-50 h-full w-full rounded-[16px] mix-blend-overlay"
-                    style={{
-                        background: glareBackground,
-                        opacity: 0.6,
-                    }}
-                    transition={{ duration: 0.2 }}
-                />
+                {/* Glare Layer - Disable on mobile */}
+                {!isMobile && (
+                    <motion.div
+                        className="pointer-events-none absolute inset-0 z-50 h-full w-full rounded-[16px] mix-blend-overlay"
+                        style={{
+                            background: glareBackground,
+                            opacity: 0.6,
+                        }}
+                        transition={{ duration: 0.2 }}
+                    />
+                )}
             </motion.div>
         </div>
     );
