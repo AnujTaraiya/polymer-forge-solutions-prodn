@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { Spotlight } from "@/components/ui/spotlight"; // NEW import
@@ -24,12 +24,20 @@ const rotatingScenes = [
 
 const Hero = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTextIndex((prev) => (prev + 1) % rotatingScenes.length);
     }, 5000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      // Force reset to start to prevent "last frame" flicker
+      videoRef.current.currentTime = 0;
+    }
   }, []);
 
   return (
@@ -41,10 +49,10 @@ const Hero = () => {
       />
 
       {/* Background Video with Asymmetric Motion */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden bg-brand-navy">
         <motion.video
+          ref={videoRef}
           src="/GIF.mp4"
-          poster="/Pellets_Website.avif"
           autoPlay
           loop
           muted
@@ -61,7 +69,7 @@ const Hero = () => {
           }}
         />
         {/* Gradient Overlay for better contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/60 via-brand-navy/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/60 via-brand-navy/30 to-transparent z-10" />
       </div>
 
       {/* Content Container - Vertically Centered */}
