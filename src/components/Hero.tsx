@@ -44,15 +44,17 @@ const Hero = () => {
       <div className="absolute inset-0 overflow-hidden">
         <motion.video
           src="/GIF.mp4"
+          poster="/Pellets_Website.avif"
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover"
+          preload="auto"
+          className="w-full h-full object-cover will-change-transform translate-z-0"
           initial={{ scale: 1, x: 0 }}
-          animate={{ scale: 1.1, x: "-2%" }}
+          animate={{ scale: 1.05, x: "-1%" }}
           transition={{
-            duration: 20,
+            duration: 25,
             repeat: Infinity,
             repeatType: "mirror",
             ease: "easeInOut"
