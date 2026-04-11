@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["DM Sans", "sans-serif"],
-        heading: ["DM Sans", "sans-serif"],
-        gotham: ['Montserrat', 'system-ui', 'sans-serif'],
+        sans: ["Urbanist", "sans-serif"],
+        heading: ["Urbanist", "sans-serif"],
+        gotham: ["Urbanist", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

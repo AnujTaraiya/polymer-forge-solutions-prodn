@@ -6,6 +6,12 @@
 All colors MUST be HSL.
 */
 
+@font-face {
+  font-family: 'Urbanist';
+  src: url('/Urbanist-Light.ttf') format('truetype');
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --background: 0 0% 98%;
