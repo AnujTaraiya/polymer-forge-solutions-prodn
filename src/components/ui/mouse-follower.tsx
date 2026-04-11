@@ -12,8 +12,17 @@ export const MouseFollower = () => {
     const cursorYSpring = useSpring(cursorY, springConfig);
 
     const [hovered, setHovered] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
+    useEffect(() => {
+        if (isMobile) return;
         const moveCursor = (e: MouseEvent) => {
             cursorX.set(e.clientX);
             cursorY.set(e.clientY);
@@ -35,6 +44,8 @@ export const MouseFollower = () => {
             window.removeEventListener("mouseover", handleMouseOver);
         };
     }, []);
+
+    if (isMobile) return null;
 
     return (
         <>

@@ -16,6 +16,7 @@ import {
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const isHome = location.pathname === "/";
@@ -93,10 +94,15 @@ const Navigation = () => {
                   {navItems.map((item) => {
                     if (item.id === "products") {
                       return (
-                        <DropdownMenu key={item.id}>
-                          <DropdownMenuTrigger className="px-4 py-2 text-sm font-medium text-secondary-foreground/90 hover:text-primary transition-colors uppercase tracking-wide flex items-center gap-1 focus:outline-none">
-                            {item.label} <ChevronDown className="h-4 w-4" />
-                          </DropdownMenuTrigger>
+                        <div 
+                          key={item.id}
+                          onMouseEnter={() => setIsProductsDropdownOpen(true)}
+                          onMouseLeave={() => setIsProductsDropdownOpen(false)}
+                        >
+                          <DropdownMenu open={isProductsDropdownOpen} onOpenChange={setIsProductsDropdownOpen}>
+                            <DropdownMenuTrigger className="px-4 py-2 text-sm font-medium text-secondary-foreground/90 hover:text-primary transition-colors uppercase tracking-wide flex items-center gap-1 focus:outline-none">
+                              {item.label} <ChevronDown className="h-4 w-4" />
+                            </DropdownMenuTrigger>
                           <DropdownMenuContent className="bg-background/95 backdrop-blur-md border-white/10">
                             <DropdownMenuItem asChild>
                               <Link to="/colour-solutions" className="cursor-pointer">Colour Solutions</Link>
@@ -110,8 +116,9 @@ const Navigation = () => {
                             <DropdownMenuItem asChild>
                               <Link to="/long-glass-fiber" className="cursor-pointer">Long Glass Fiber</Link>
                             </DropdownMenuItem>
-                          </DropdownMenuContent>
-                        </DropdownMenu>
+                            </DropdownMenuContent>
+                          </DropdownMenu>
+                        </div>
                       );
                     }
                     return (
