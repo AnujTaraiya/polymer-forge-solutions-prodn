@@ -152,18 +152,6 @@ All colors MUST be HSL.
     background: #474c50;
   }
 
-  /* Custom Cursor Hiding - Aggressive Override */
-  @media (min-width: 1024px) {
-
-    html,
-    body,
-    *,
-    *::before,
-    *::after {
-      cursor: none !important;
-    }
-  }
-
   /* GPU Optimized Background - Replaces background-attachment: fixed */
   #bg-layer {
     position: fixed;
@@ -182,5 +170,16 @@ All colors MUST be HSL.
 
   .dark #bg-layer {
     opacity: 1;
+  }
+}
+
+/* Custom Cursor Hiding - Aggressive Override (Moved outside layer base for maximum priority) */
+@media (min-width: 1024px) {
+  html,
+  body,
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
   }
 }
