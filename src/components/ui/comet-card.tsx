@@ -11,8 +11,8 @@ import { cn } from "@/lib/utils";
 import { triggerHaptic } from "@/lib/haptics";
 
 export const CometCard = ({
-    rotateDepth = 5,
-    translateDepth = 5,
+    rotateDepth = 2,
+    translateDepth = 2,
     className,
     children,
 }: {
@@ -101,8 +101,8 @@ export const CometCard = ({
                 }}
                 initial={{ scale: 1, z: 0 }}
                 whileHover={isMobile ? {} : {
-                    scale: 1.02,
-                    z: 20,
+                    scale: 1.01,
+                    z: 10,
                     transition: { duration: 0.2 },
                 }}
                 whileTap={{ scale: 0.98 }}
