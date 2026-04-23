@@ -13,6 +13,7 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      "react/compiler-runtime": path.resolve(__dirname, "./src/react-compiler-runtime.js"),
     },
   },
   build: {
