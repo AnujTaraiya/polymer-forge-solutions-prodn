@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Home, Info, Package, Factory, Mail, ChevronDown } from "lucide-react"; // Added icons
+import { Menu, X, Home, Info, Package, Factory, Mail, ChevronDown, Newspaper } from "lucide-react";
 import polnyeoLogo from "@/assets/polyneo-logo-white.png";
 import { ModeToggle } from "@/components/mode-toggle";
 import { FloatingDock } from "@/components/ui/floating-dock"; // Added FloatingDock
@@ -60,14 +60,15 @@ const Navigation = () => {
     { label: "About", id: "about", icon: <Info className="h-full w-full text-neutral-500 dark:text-neutral-300" /> },
     { label: "Products", id: "products", icon: <Package className="h-full w-full text-neutral-500 dark:text-neutral-300" /> },
     { label: "Industries", id: "industries", icon: <Factory className="h-full w-full text-neutral-500 dark:text-neutral-300" /> },
+    { label: "Blog", id: "blog", icon: <Newspaper className="h-full w-full text-neutral-500 dark:text-neutral-300" /> },
     { label: "Contact", id: "contact", icon: <Mail className="h-full w-full text-neutral-500 dark:text-neutral-300" /> },
   ];
 
   const floatingDockItems = navItems.map(item => ({
     title: item.label,
     icon: item.icon,
-    href: `#${item.id}`,
-    onClick: () => scrollToSection(item.id)
+    href: item.id === "blog" ? "/blog" : `#${item.id}`,
+    onClick: item.id === "blog" ? () => navigate("/blog") : () => scrollToSection(item.id)
   }));
 
 
@@ -121,6 +122,17 @@ const Navigation = () => {
                         </div>
                       );
                     }
+                    if (item.id === "blog") {
+                      return (
+                        <Link
+                          key={item.id}
+                          to="/blog"
+                          className="px-4 py-2 text-sm font-medium text-secondary-foreground/90 hover:text-primary transition-colors uppercase tracking-wide"
+                        >
+                          {item.label}
+                        </Link>
+                      );
+                    }
                     return (
                       <button
                         key={item.id}
@@ -159,13 +171,24 @@ const Navigation = () => {
               {isMobileMenuOpen && (
                 <div className="md:hidden py-4 bg-secondary/95 backdrop-blur-md rounded-b-xl border-t border-white/10">
                   {navItems.map((item) => (
-                    <button
-                      key={item.id}
-                      onClick={() => scrollToSection(item.id)}
-                      className="block w-full text-left px-4 py-3 text-secondary-foreground/90 hover:bg-white/5 hover:text-primary transition-colors uppercase tracking-wide"
-                    >
-                      {item.label}
-                    </button>
+                    item.id === "blog" ? (
+                      <Link
+                        key={item.id}
+                        to="/blog"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="block w-full text-left px-4 py-3 text-secondary-foreground/90 hover:bg-white/5 hover:text-primary transition-colors uppercase tracking-wide"
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <button
+                        key={item.id}
+                        onClick={() => scrollToSection(item.id)}
+                        className="block w-full text-left px-4 py-3 text-secondary-foreground/90 hover:bg-white/5 hover:text-primary transition-colors uppercase tracking-wide"
+                      >
+                        {item.label}
+                      </button>
+                    )
                   ))}
                   <div className="px-4 pt-2">
                     <Button
