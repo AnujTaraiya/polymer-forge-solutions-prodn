@@ -12,6 +12,9 @@ const ColourSolutions = lazy(() => import("./pages/ColourSolutions"));
 const ConductiveAntistatic = lazy(() => import("./pages/ConductiveAntistatic"));
 const FlameRetardant = lazy(() => import("./pages/FlameRetardant"));
 const LgfCompounds = lazy(() => import("./pages/LgfCompounds"));
+const SanityStudio = lazy(() => import("./pages/Studio"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
 
 const queryClient = new QueryClient();
 
@@ -44,6 +47,14 @@ const App = () => (
             <Route path="/conductive-and-electrostatic-protection" element={<ConductiveAntistatic />} />
             <Route path="/flame-retardant" element={<FlameRetardant />} />
             <Route path="/long-glass-fiber" element={<LgfCompounds />} />
+            
+            {/* Sanity Studio Route - Must use wildcard * to handle sub-paths */}
+            <Route path="/studio/*" element={<SanityStudio />} />
+
+            {/* Blog Routes */}
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
