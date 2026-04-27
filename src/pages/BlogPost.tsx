@@ -115,50 +115,61 @@ export default function BlogPost() {
     <div className="min-h-screen bg-background flex flex-col font-sans">
       <Navigation />
       
-      <main className="flex-grow pt-32 pb-20">
-        <article className="container mx-auto px-4 max-w-4xl">
-          <Link to="/blog" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-brand-orange transition-colors mb-8">
-            <ArrowLeft className="w-4 h-4 mr-2" /> Back to Insights
-          </Link>
-
-          <div className="flex flex-wrap gap-2 mb-6">
-            {post.categories?.map((cat: string) => (
-              <span key={cat} className="text-sm font-bold uppercase tracking-wider text-brand-orange bg-brand-orange/10 px-3 py-1 rounded-sm">
-                {cat}
-              </span>
-            ))}
-          </div>
-
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 uppercase">
-            {post.title}
-          </h1>
-
-          <div className="flex items-center gap-4 text-muted-foreground mb-10 border-b border-white/10 pb-10">
-            {post.authorName && (
-              <div className="flex items-center gap-2">
-                <span className="font-medium text-foreground">{post.authorName}</span>
-              </div>
-            )}
-            {post.authorName && <span className="opacity-50">•</span>}
-            <time dateTime={post.publishedAt}>
-              {new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', {
-                month: 'long',
-                day: 'numeric',
-                year: 'numeric'
-              })}
-            </time>
-          </div>
-
-          {post.mainImage && (
-            <div className="mb-14 rounded-2xl overflow-hidden shadow-2xl bg-muted aspect-video relative">
+      <main className="flex-grow pb-20">
+        {/* Full-width Hero Banner */}
+        <div className="relative w-full h-[60vh] min-h-[400px] flex items-end pb-16 pt-32">
+          {post.mainImage ? (
+            <div className="absolute inset-0 z-0">
               <img
-                src={urlFor(post.mainImage).width(1200).height(800).url()}
+                src={urlFor(post.mainImage).width(1920).height(1080).url()}
                 alt={post.title}
                 className="w-full h-full object-cover"
               />
+              {/* Black gradient film for text visibility */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
             </div>
+          ) : (
+            <div className="absolute inset-0 z-0 bg-slate-900" />
           )}
 
+          {/* Hero Content overlaid on image */}
+          <div className="container mx-auto px-4 max-w-4xl relative z-10">
+            <Link to="/blog" className="inline-flex items-center text-sm font-medium text-white/70 hover:text-white transition-colors mb-6">
+              <ArrowLeft className="w-4 h-4 mr-2" /> Back to Insights
+            </Link>
+
+            <div className="flex flex-wrap gap-2 mb-4">
+              {post.categories?.map((cat: string) => (
+                <span key={cat} className="text-xs font-bold uppercase tracking-wider text-brand-orange bg-black/40 backdrop-blur-md px-3 py-1 rounded-sm border border-brand-orange/30">
+                  {cat}
+                </span>
+              ))}
+            </div>
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 uppercase leading-tight drop-shadow-lg">
+              {post.title}
+            </h1>
+
+            <div className="flex items-center gap-4 text-white/80 font-medium">
+              {post.authorName && (
+                <div className="flex items-center gap-2">
+                  <span>{post.authorName}</span>
+                </div>
+              )}
+              {post.authorName && <span className="opacity-50">•</span>}
+              <time dateTime={post.publishedAt}>
+                {new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', {
+                  month: 'long',
+                  day: 'numeric',
+                  year: 'numeric'
+                })}
+              </time>
+            </div>
+          </div>
+        </div>
+
+        {/* Article Body */}
+        <article className="container mx-auto px-4 max-w-4xl mt-16">
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <PortableText value={post.body} components={ptComponents} />
           </div>
