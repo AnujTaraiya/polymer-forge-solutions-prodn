@@ -125,21 +125,40 @@ export default function BlogPost() {
                 alt={post.title}
                 className="w-full h-full object-cover"
               />
-              {/* Smooth multi-stop gradient for text visibility + bottom diffusion */}
+              {/* Layer 1: Dark film for text readability */}
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
                   background: `linear-gradient(to top,
+                    rgba(0,0,0,0.7) 0%,
+                    rgba(0,0,0,0.5) 40%,
+                    rgba(0,0,0,0.25) 70%,
+                    rgba(0,0,0,0.1) 100%
+                  )`
+                }}
+              />
+              {/* Layer 2: Ultra-smooth bottom diffusion into page background */}
+              <div
+                className="absolute inset-x-0 bottom-0 pointer-events-none"
+                style={{
+                  height: '60%',
+                  background: `linear-gradient(to top,
                     hsl(var(--background)) 0%,
-                    hsl(var(--background) / 0.95) 3%,
-                    hsl(var(--background) / 0.85) 6%,
-                    hsl(var(--background) / 0.7) 10%,
-                    hsl(var(--background) / 0.5) 15%,
-                    hsl(var(--background) / 0.3) 20%,
-                    rgba(0,0,0,0.65) 30%,
-                    rgba(0,0,0,0.45) 50%,
-                    rgba(0,0,0,0.2) 70%,
-                    transparent 100%
+                    hsl(var(--background) / 0.98) 2%,
+                    hsl(var(--background) / 0.94) 5%,
+                    hsl(var(--background) / 0.88) 8%,
+                    hsl(var(--background) / 0.8) 12%,
+                    hsl(var(--background) / 0.71) 16%,
+                    hsl(var(--background) / 0.6) 21%,
+                    hsl(var(--background) / 0.5) 26%,
+                    hsl(var(--background) / 0.4) 32%,
+                    hsl(var(--background) / 0.3) 39%,
+                    hsl(var(--background) / 0.22) 46%,
+                    hsl(var(--background) / 0.15) 54%,
+                    hsl(var(--background) / 0.1) 62%,
+                    hsl(var(--background) / 0.06) 72%,
+                    hsl(var(--background) / 0.03) 83%,
+                    hsl(var(--background) / 0) 100%
                   )`
                 }}
               />
