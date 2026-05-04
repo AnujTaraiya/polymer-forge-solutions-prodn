@@ -117,7 +117,7 @@ export default function BlogPost() {
       
       <main className="flex-grow pb-20">
         {/* Full-width Hero Banner */}
-        <div className="relative w-full h-[60vh] min-h-[400px] flex items-end pb-16 pt-32">
+        <div className="relative w-full h-[60vh] min-h-[450px] flex items-end pb-32 pt-32">
           {post.mainImage ? (
             <div className="absolute inset-0 z-0">
               <img
@@ -126,14 +126,14 @@ export default function BlogPost() {
                 className="w-full h-full object-cover"
               />
               {/* Dark gradient film for text visibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
               
               {/* Seamless diffusion into page background at the very bottom edge */}
-              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background via-background/80 to-background/0 pointer-events-none" />
             </div>
           ) : (
             <div className="absolute inset-0 z-0 bg-slate-900">
-              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background via-background/80 to-background/0 pointer-events-none" />
             </div>
           )}
 
