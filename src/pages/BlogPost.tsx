@@ -125,16 +125,27 @@ export default function BlogPost() {
                 alt={post.title}
                 className="w-full h-full object-cover"
               />
-              {/* Dark gradient film for text visibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-              
-              {/* Seamless diffusion into page background at the very bottom edge */}
-              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background via-background/80 to-background/0 pointer-events-none" />
+              {/* Smooth multi-stop gradient for text visibility + bottom diffusion */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: `linear-gradient(to top,
+                    hsl(var(--background)) 0%,
+                    hsl(var(--background) / 0.95) 3%,
+                    hsl(var(--background) / 0.85) 6%,
+                    hsl(var(--background) / 0.7) 10%,
+                    hsl(var(--background) / 0.5) 15%,
+                    hsl(var(--background) / 0.3) 20%,
+                    rgba(0,0,0,0.65) 30%,
+                    rgba(0,0,0,0.45) 50%,
+                    rgba(0,0,0,0.2) 70%,
+                    transparent 100%
+                  )`
+                }}
+              />
             </div>
           ) : (
-            <div className="absolute inset-0 z-0 bg-slate-900">
-              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background via-background/80 to-background/0 pointer-events-none" />
-            </div>
+            <div className="absolute inset-0 z-0 bg-slate-900" />
           )}
 
           {/* Hero Content overlaid on image */}
