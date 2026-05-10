@@ -4,7 +4,7 @@ import { client, urlFor } from "@/lib/sanity";
 import { PortableText } from "@portabletext/react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Share2, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Custom Tailwind configurations for Portable Text rendering
@@ -59,6 +59,14 @@ export default function BlogPost() {
   const { slug } = useParams();
   const [post, setPost] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = () => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
 
   useEffect(() => {
     client
@@ -168,37 +176,60 @@ export default function BlogPost() {
           )}
 
           {/* Hero Content overlaid on image */}
-          <div className="container mx-auto px-4 max-w-4xl relative z-10">
-            <Link to="/blog" className="inline-flex items-center text-sm font-medium text-white/70 hover:text-white transition-colors mb-6">
-              <ArrowLeft className="w-4 h-4 mr-2" /> Back to Insights
-            </Link>
+          <div className="container mx-auto px-4 max-w-5xl relative z-10">
+            <div className="flex items-start justify-between gap-4">
+              <div className="flex-1 max-w-4xl">
+                <Link to="/blog" className="inline-flex items-center text-sm font-medium text-white/70 hover:text-white transition-colors mb-6">
+                  <ArrowLeft className="w-4 h-4 mr-2" /> Back to Insights
+                </Link>
 
-            <div className="flex flex-wrap gap-2 mb-4">
-              {post.categories?.map((cat: string) => (
-                <span key={cat} className="text-xs font-bold uppercase tracking-wider text-brand-orange bg-black/40 backdrop-blur-md px-3 py-1 rounded-sm border border-brand-orange/30">
-                  {cat}
-                </span>
-              ))}
-            </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 uppercase leading-tight drop-shadow-lg">
-              {post.title}
-            </h1>
-
-            <div className="flex items-center gap-4 text-white/80 font-medium">
-              {post.authorName && (
-                <div className="flex items-center gap-2">
-                  <span>{post.authorName}</span>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {post.categories?.map((cat: string) => (
+                    <span key={cat} className="text-xs font-bold uppercase tracking-wider text-brand-orange bg-black/40 backdrop-blur-md px-3 py-1 rounded-sm border border-brand-orange/30">
+                      {cat}
+                    </span>
+                  ))}
                 </div>
-              )}
-              {post.authorName && <span className="opacity-50">•</span>}
-              <time dateTime={post.publishedAt}>
-                {new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', {
-                  month: 'long',
-                  day: 'numeric',
-                  year: 'numeric'
-                })}
-              </time>
+
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 uppercase leading-tight drop-shadow-lg">
+                  {post.title}
+                </h1>
+
+                <div className="flex items-center gap-4 text-white/80 font-medium">
+                  {post.authorName && (
+                    <div className="flex items-center gap-2">
+                      <span>{post.authorName}</span>
+                    </div>
+                  )}
+                  {post.authorName && <span className="opacity-50">•</span>}
+                  <time dateTime={post.publishedAt}>
+                    {new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', {
+                      month: 'long',
+                      day: 'numeric',
+                      year: 'numeric'
+                    })}
+                  </time>
+                </div>
+              </div>
+
+              {/* Share Button */}
+              <button
+                onClick={handleShare}
+                className="mt-8 flex-shrink-0 group relative p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer"
+                aria-label="Copy link to clipboard"
+                title="Copy link to clipboard"
+              >
+                {copied ? (
+                  <Check className="w-5 h-5 text-green-400 transition-all" />
+                ) : (
+                  <Share2 className="w-5 h-5 text-white/80 group-hover:text-white transition-all" />
+                )}
+                {copied && (
+                  <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs text-green-400 font-medium whitespace-nowrap">
+                    Link copied!
+                  </span>
+                )}
+              </button>
             </div>
           </div>
         </div>
