@@ -125,7 +125,7 @@ export default function BlogPost() {
       
       <main className="flex-grow pb-20">
         {/* Full-width Hero Banner */}
-        <div className="relative w-full h-[60vh] min-h-[450px] flex items-end pb-32 pt-32">
+        <div className="relative w-full h-[70vh] min-h-[550px] flex items-end pb-32 pt-40">
           {post.mainImage ? (
             <div className="absolute inset-0 z-0">
               <img
