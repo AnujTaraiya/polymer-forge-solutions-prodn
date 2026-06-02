@@ -56,6 +56,15 @@ export default defineType({
           type: 'image',
           options: {hotspot: true},
         },
+        {
+          type: 'object',
+          name: 'dataTable',
+          title: 'Data Table',
+          fields: [
+            { name: 'headers', title: 'Headers', type: 'array', of: [{ type: 'string' }] },
+            { name: 'rows', title: 'Rows', type: 'array', of: [{ type: 'array', of: [{ type: 'string' }] }] },
+          ],
+        },
       ],
     }),
   ],

@@ -22,7 +22,36 @@ const ptComponents = {
           className="my-8 rounded-xl object-cover shadow-lg mx-auto"
         />
       )
-    }
+    },
+    dataTable: ({ value }: any) => {
+      if (!value?.headers || !value?.rows) return null;
+      return (
+        <div className="my-8 overflow-x-auto rounded-xl border border-white/10 shadow-lg">
+          <table className="w-full text-sm text-left">
+            <thead>
+              <tr className="bg-brand-orange/15 border-b border-brand-orange/30">
+                {value.headers.map((h: string, i: number) => (
+                  <th key={i} className="px-5 py-3 font-bold text-brand-orange uppercase tracking-wider text-xs whitespace-nowrap">
+                    {h}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {value.rows.map((row: string[], ri: number) => (
+                <tr key={ri} className={`border-b border-white/5 ${ri % 2 === 0 ? 'bg-card/50' : 'bg-card/30'} hover:bg-brand-orange/5 transition-colors`}>
+                  {row.map((cell: string, ci: number) => (
+                    <td key={ci} className={`px-5 py-3 ${ci === 0 ? 'font-semibold text-foreground' : 'text-muted-foreground'}`}>
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )
+    },
   },
   block: {
     h1: ({ children }: any) => <h1 className="text-4xl font-bold mt-12 mb-4 text-foreground">{children}</h1>,
