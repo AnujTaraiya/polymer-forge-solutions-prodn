@@ -14,7 +14,7 @@ export default function Blog() {
   useEffect(() => {
     client
       .fetch(
-        `*[_type == "post" && defined(slug.current) && publishedAt <= now()] | order(publishedAt desc){
+        `*[_type == "post" && defined(slug.current)] | order(publishedAt desc){
           _id,
           title,
           slug,
