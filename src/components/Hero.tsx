@@ -63,7 +63,9 @@ const Hero = () => {
           loop
           muted
           playsInline
-          preload="none"
+          preload="auto"
+          // @ts-ignore - fetchPriority is supported in modern browsers
+          fetchpriority="high"
           onPlay={() => setVideoLoaded(true)}
           className="w-full h-full object-cover will-change-transform translate-z-0"
           initial={{ opacity: 0, scale: 1, x: 0 }}
