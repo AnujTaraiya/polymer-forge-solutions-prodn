@@ -12,6 +12,8 @@ export default function Blog() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    document.title = "Insights & News | Polyneo Advanced Materials";
+    
     client
       .fetch(
         `*[_type == "post" && defined(slug.current)] | order(publishedAt desc){

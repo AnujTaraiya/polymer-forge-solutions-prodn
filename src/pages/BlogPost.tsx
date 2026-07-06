@@ -113,6 +113,9 @@ export default function BlogPost() {
       .then((data) => {
         setPost(data);
         setLoading(false);
+        if (data?.title) {
+          document.title = `${data.title} | Polyneo Blog`;
+        }
       })
       .catch((error) => {
         console.error("Error fetching post:", error);
