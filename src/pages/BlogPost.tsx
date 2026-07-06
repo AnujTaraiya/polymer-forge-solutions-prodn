@@ -207,7 +207,7 @@ export default function BlogPost() {
           {/* Hero Content overlaid on image */}
           <div className="container mx-auto px-4 max-w-5xl relative z-10">
             <div className="flex items-start justify-between gap-4">
-              <div className="flex-1 max-w-4xl">
+              <div className="flex-1 min-w-0 max-w-4xl">
                 <Link to="/blog" className="inline-flex items-center text-sm font-medium text-white/70 hover:text-white transition-colors mb-6">
                   <ArrowLeft className="w-4 h-4 mr-2" /> Back to Insights
                 </Link>
@@ -220,7 +220,7 @@ export default function BlogPost() {
                   ))}
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 uppercase leading-tight drop-shadow-lg">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 uppercase leading-tight drop-shadow-lg break-words hyphens-auto">
                   {post.title}
                 </h1>
 
