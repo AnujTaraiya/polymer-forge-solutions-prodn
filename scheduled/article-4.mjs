@@ -74,7 +74,7 @@ async function run() {
   
   if (result) {
     console.log('📤 Uploading banner image for Article 4...');
-    const imagePath = path.join(process.cwd(), 'scheduled', 'images', 'WA0009.jpg');
+    const imagePath = path.join(process.cwd(), 'images', 'WA0009.jpg');
     const imageBuffer = fs.readFileSync(imagePath);
     const imageAsset = await client.assets.upload('image', imageBuffer, {
       filename: 'article-4-banner.jpg'
