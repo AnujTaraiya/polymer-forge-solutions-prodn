@@ -48,7 +48,7 @@ const Products = () => {
       description: "Acrylonitrile Butadiene Styrene Compounds"
     },
     {
-      name: "NeoCARBONATE",
+      name: "NEO PC",
       description: "Polycarbonate Compounds"
     },
     {
