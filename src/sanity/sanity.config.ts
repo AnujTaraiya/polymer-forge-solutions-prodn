@@ -3,9 +3,8 @@ import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './schemaTypes'
 
-// Credentials loaded from .env (VITE_SANITY_PROJECT_ID, VITE_SANITY_DATASET)
-export const projectId = import.meta.env.VITE_SANITY_PROJECT_ID || '16frci4z';
-export const dataset = import.meta.env.VITE_SANITY_DATASET || "production";
+export const projectId = '16frci4z';
+export const dataset = 'production';
 
 export default defineConfig({
   name: 'default',

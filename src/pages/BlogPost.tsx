@@ -85,7 +85,8 @@ const ptComponents = {
 };
 
 export default function BlogPost() {
-  const { slug } = useParams();
+  const { slug: rawSlug } = useParams();
+  const slug = rawSlug ? decodeURIComponent(rawSlug).trim() : '';
   const [post, setPost] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [copied, setCopied] = useState(false);
@@ -98,6 +99,7 @@ export default function BlogPost() {
   };
 
   useEffect(() => {
+    if (!slug) return;
     client
       .fetch(
         `*[_type == "post" && slug.current == $slug][0]{
